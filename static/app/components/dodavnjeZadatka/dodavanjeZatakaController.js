@@ -11,8 +11,30 @@
         datum_provere: ""
       };
 
+      this.dobaviPredemte = function() {
+        $http.get("/api/dobaviPredmete").then(
+          function(response) {
+            that.predmeti = response.data;
+            console.log(that.predmeti);
+          },
+          function(reason) {
+            console.log(reason);
+          }
+        );
+      };
+
+      this.srediDatum = function() {
+        mysqlDateFormat = that.noviZadatak.datum_provere
+          .toISOString()
+          .slice(0, 19)
+          .replace("T", " ");
+        console.log(mysqlDateFormat);
+        that.noviZadatak.datum_provere = mysqlDateFormat;
+      };
+
       this.dodajNoviZadatak = function() {
-        $http.post("/api/dodajPredmet", that.noviZadatak).then(
+        that.srediDatum();
+        $http.post("/api/dodajZadatak", that.noviZadatak).then(
           function(response) {
             console.log("Uspijesno dodat novi zadatak...");
             $state.go("home");
@@ -22,6 +44,8 @@
           }
         );
       };
+
+      this.dobaviPredemte();
     }
   ]);
 })(angular);

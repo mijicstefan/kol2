@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="display-4 text-center">Dodajte Novi Zadatak</h1>
+  </div>
+  <div class="col-12">
+    <form ng-submit="ctrl.dodajNoviZadatak()" name="studentForma">
+      <div class="form-group">
+        <label for="ime">Naslov</label>
+        <input
+          type="text"
+          name="indeks"
+          id="indeks"
+          class="form-control"
+          ng-model="ctrl.noviZadatak.naslov"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Sadržaj</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            ng-model="ctrl.noviZadatak.sadrzaj"
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="korisnicko_ime">Datum</label>
+        <input
+          type="datetime-local"
+          name="prezime"
+          id="prezime"
+          class="form-control"
+          ng-model="ctrl.noviZadatak.datum_provere"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="predmet">Izaberi Predmet</label>
+        <select
+          name="predmet"
+          id="predmet"
+          ng-model="ctrl.noviZadatak.predmet_id"
+        >
+          <option ng-repeat="predmet in ctrl.predmeti" value="{{predmet.id}}"
+            >{{predmet.naziv}}</option
+          >
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Dodaj zadatak" class="btn btn-primary" />
+      </div>
+    </form>
+  </div>
+</div>

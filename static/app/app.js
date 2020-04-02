@@ -47,8 +47,15 @@
           name: "dodajZadatak",
           url: "/dodajZadatak",
           templateUrl:
-            "app/components/dodavanjePredmeta/dodavanjePredmeta.tpl.html",
-          controller: "dodavanjePredmetaController",
+            "app/components/dodavnjeZadatka/dodavanjeZadatka.tpl.html",
+          controller: "dodavanjeZadatkaController",
+          controllerAs: "ctrl"
+        })
+        .state({
+          name: "prikaziZadatak",
+          url: "/prikaziZadatak",
+          templateUrl: "app/components/prikazZadataka/prikazZadataka.tpl.html",
+          controller: "prikazZadatkaController",
           controllerAs: "ctrl"
         });
 

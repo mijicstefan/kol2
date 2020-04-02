@@ -8,6 +8,7 @@
         naziv: "",
         skracenica: ""
       };
+      this.predmeti = [];
 
       this.dodajNoviPredmet = function() {
         $http.post("/api/dodajPredmet", that.noviPredmet).then(
