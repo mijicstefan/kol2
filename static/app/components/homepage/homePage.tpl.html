@@ -10,12 +10,29 @@
           <tr>
             <th scope="col">Naziv</th>
             <th scope="col">Skraćenica</th>
+            <th scope="col">Izmijeni Podatke</th>
+            <th scope="col">Obriši</th>
           </tr>
         </thead>
         <tbody ng-repeat="predmet in ctrl.predmeti">
           <tr>
             <td>{{predmet.naziv}}</td>
             <td>{{predmet.skracenica}}</td>
+            <td>
+              <a ui-sref="updatePredmeta({id:predmet.id})">Izmijeni Podatke</a>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <button
+                    ng-click="ctrl.obrisiPredmet(predmet['id'])"
+                    class="btn btn-danger btn-sm"
+                  >
+                    <span>Obriši Predmet &times</span>
+                  </button>
+                </div>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -34,7 +51,7 @@
             <th scope="col">Ime</th>
             <th scope="col">Prezime</th>
             <th scope="col">Izmijeni Podatke</th>
-            <th scope="col">Obrisi</th>
+            <th scope="col">Obriši</th>
           </tr>
         </thead>
         <tbody ng-repeat="student in ctrl.students">
@@ -52,7 +69,7 @@
                 ng-click="ctrl.obrisiStudenta(student['id'])"
                 class="btn btn-danger btn-sm"
               >
-                <span>Obrisi Studenta &times</span>
+                <span>Obriši Studenta &times</span>
               </button>
             </td>
           </tr>

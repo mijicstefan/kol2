@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="display-4 text-center">Izmjena Podataka O Predmetu</h1>
+  </div>
+  <div class="col-12">
+    <form ng-submit="ctrl.wrapperFunction()" name="predmetForma">
+      <div class="form-group">
+        <label for="ime">Naziv</label>
+        <input
+          type="text"
+          name="indeks"
+          id="indeks"
+          class="form-control"
+          ng-model="ctrl.noviPredmet.naziv"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prezime">Skraćenica</label>
+        <input
+          type="text"
+          name="ime"
+          id="ime"
+          class="form-control"
+          ng-model="ctrl.noviPredmet.skracenica"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Izmijeni predmet" class="btn btn-primary" />
+      </div>
+    </form>
+  </div>
+</div>

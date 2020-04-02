@@ -19,6 +19,37 @@
           templateUrl: "app/components/izmjenaStudent/izmjenaStudenta.tpl.html",
           controller: "studentUpdateController",
           controllerAs: "ctrl"
+        })
+        .state({
+          name: "updatePredmeta",
+          url: "/updatePredmeta/{id}",
+          templateUrl: "app/components/izmjenaPredmet/izmjenaPredmeta.tpl.html",
+          controller: "predmetUpdateController",
+          controllerAs: "ctrl"
+        })
+        .state({
+          name: "dodajStudenta",
+          url: "/dodajStudenta",
+          templateUrl:
+            "app/components/dodavanjeStudenta/dodavanjeStudenta.tpl.html",
+          controller: "dodavanjeStudentaController",
+          controllerAs: "ctrl"
+        })
+        .state({
+          name: "dodajPredmet",
+          url: "/dodajPredmet",
+          templateUrl:
+            "app/components/dodavanjePredmeta/dodavanjePredmeta.tpl.html",
+          controller: "dodavanjePredmetaController",
+          controllerAs: "ctrl"
+        })
+        .state({
+          name: "dodajZadatak",
+          url: "/dodajZadatak",
+          templateUrl:
+            "app/components/dodavanjePredmeta/dodavanjePredmeta.tpl.html",
+          controller: "dodavanjePredmetaController",
+          controllerAs: "ctrl"
         });
 
       $urlRouterProvider.otherwise("/");

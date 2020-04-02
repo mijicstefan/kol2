@@ -21,13 +21,7 @@
       this.obrisiStudenta = function(id) {
         $http.delete("/api/obrisiStudenta/" + id).then(
           function(response) {
-            let data = response.data.status;
-            if (data === "ok") {
-              console.log("Student uspijesno obrisan!");
-              that.loadInitData();
-            } else {
-              console.log("Greska na serveru! Ne radi brisanje!");
-            }
+            that.loadInitData();
           },
           function(reason) {
             console.log(reason);
@@ -46,6 +40,18 @@
           }
         );
       };
+
+      this.obrisiPredmet = function(id) {
+        $http.delete("/api/obrisiJedanPredmet/" + id).then(
+          function(response) {
+            that.loadInitData();
+          },
+          function(reason) {
+            console.log(reason);
+          }
+        );
+      };
+
       this.loadInitData = function() {
         that.dobaviSvePredmete();
         that.dobaviSveStudente();

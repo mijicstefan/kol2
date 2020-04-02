@@ -1,5 +1,6 @@
 from blueprints.predmeti.predmet import predmet_blueprint
 from blueprints.studenti.student import student_blueprint
+from blueprints.zadaci.zadaci import zadaci_blueprint
 from flask import Flask
 from database.db import mysql
 
@@ -19,6 +20,7 @@ def home():
 
 app.register_blueprint(predmet_blueprint, url_prefix='/api')
 app.register_blueprint(student_blueprint, url_prefix="/api")
+app.register_blueprint(zadaci_blueprint,  url_prefix="/api")
 
 if __name__ == "__main__":
     app.run('0.0.0.0', 5000, threaded=True, debug=True)
