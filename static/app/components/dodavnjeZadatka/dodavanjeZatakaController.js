@@ -29,6 +29,7 @@
           .slice(0, 19)
           .replace("T", " ");
         console.log(mysqlDateFormat);
+        console.log("blabla");
         that.noviZadatak.datum_provere = mysqlDateFormat;
       };
 
