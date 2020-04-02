@@ -33,6 +33,10 @@
         that.noviZadatak.datum_provere = mysqlDateFormat;
       };
 
+      // const datumElement = document.querySelector("#datum");
+      // datumElement.min = new Date();
+      // console.log(datumElement);
+
       this.dodajNoviZadatak = function() {
         that.srediDatum();
         $http.post("/api/dodajZadatak", that.noviZadatak).then(

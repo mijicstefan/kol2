@@ -57,6 +57,13 @@
           templateUrl: "app/components/prikazZadataka/prikazZadataka.tpl.html",
           controller: "prikazZadatkaController",
           controllerAs: "ctrl"
+        })
+        .state({
+          name: "updateZadatak",
+          url: "/updateZadatak/{id}",
+          templateUrl: "app/components/izmjenaZadatka/izmjenaZadatka.tpl.html",
+          controller: "zadatakUpdateController",
+          controllerAs: "ctrl"
         });
 
       $urlRouterProvider.otherwise("/");

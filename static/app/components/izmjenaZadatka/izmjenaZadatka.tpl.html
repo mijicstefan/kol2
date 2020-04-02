@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-12">
-    <h1 class="display-4 text-center">Dodajte Novi Zadatak</h1>
+    <h1 class="display-4 text-center">Izmjena Podataka O Zadatku</h1>
   </div>
   <div class="col-12">
-    <form ng-submit="ctrl.dodajNoviZadatak()" name="studentForma">
+    <form ng-submit="ctrl.wrapperFunction()" name="studentForma">
       <div class="form-group">
         <label for="ime">Naslov</label>
         <input
@@ -53,7 +53,7 @@
         <input
           onclick="provera(event)"
           type="submit"
-          value="Dodaj zadatak"
+          value="Izmijeni zadatak"
           class="btn btn-primary"
         />
       </div>
@@ -62,7 +62,7 @@
 </div>
 <script>
   const provera = function(event) {
-    let pocetak = document.getElementById("datum").value;
+    let pocetak = document.getElementById("select").value;
 
     let today = new Date();
 
@@ -81,5 +81,6 @@
     } else {
       event.target.setCustomValidity("");
     }
+
   };
 </script>
